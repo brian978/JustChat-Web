@@ -1,0 +1,38 @@
+#chat {
+    width: 100%;
+    display: table;
+}
+
+.chat-row {
+    display: table-row;
+}
+
+.chat-col {
+    display: table-cell;
+}
+
+#chat-col-users {
+    width: 100px;
+}
+
+#chat-box-wrapper {
+    border: 1px solid grey;
+    margin-right: 20px;
+}
+
+#chat-box {
+    border: 0;
+    display: block;
+    width: 99%;
+    height: 296px;
+}
+
+#chat-users {
+    border: 1px solid #aeaeae;
+    width: 220px;
+    height: 300px;
+}
+
+.clearfix {
+    clear: both;
+}
