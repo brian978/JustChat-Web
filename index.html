@@ -3,8 +3,7 @@
     <head>
         <title>JustChat</title>
         <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-        <script type="text/javascript" src="javascript/main.js"></script>
+        <script data-main="javascript/main" src="javascript/vendor/require.js"></script>
     </head>
     <body>
         <div id="chat">
@@ -15,7 +14,8 @@
             <div class="chat-row">
                 <div class="chat-col">
                     <div id="chat-box-wrapper">
-                        <textarea id="chat-box"></textarea>
+                        <div id="chat-box"></div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
                 <div class="chat-col">
