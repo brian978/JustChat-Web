@@ -7,7 +7,7 @@ requirejs.config({
 
 requirejs(["jquery", "Lib/MessageBox"], function ($, MessageBox) {
     $(function () {
-        var socket = new WebSocket("ws://brian.hopto.org:7896");
+        var socket = new WebSocket("ws://127.0.0.1:7896");
         var messageBox = new MessageBox($("#chat-box"));
         var messageInput = $("#message");
 
