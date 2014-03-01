@@ -25,13 +25,14 @@ define(["./Lib"], function (Lib) {
          *
          * @param {string} message
          */
-        addMessage: function(message) {
+        addMessage: function (message) {
             var existing = this.container.html();
-            if(existing.length > 0) {
+            if (existing.length > 0) {
                 existing += "<br />";
             }
 
             this.container.html(existing + message);
+            this.container.animate({scrollTop: this.container[0].scrollHeight}, "fast");
         }
     };
 
