@@ -9,23 +9,22 @@
 var WebSocketServer = require("ws").Server;
 var server = new WebSocketServer({port: 7896});
 
-server.broadcast = function(sender, data) {
-    for(var i in this.clients) {
-        if(this.clients.hasOwnProperty(i) && this.clients[i] !== sender) {
+server.broadcast = function (sender, data) {
+    for (var i in this.clients) {
+        if (this.clients.hasOwnProperty(i) && this.clients[i] !== sender) {
             this.clients[i].send(data);
         }
     }
 };
 
-server.on("connection", function(ws){
-   console.log("client connected");
+server.on("connection", function (ws) {
+    console.log("client connected");
 
-    ws.on("message", function(message){
-       console.log("received: %s", message);
+    ws.on("message", function (message) {
         server.broadcast(ws, message);
     });
 
-    ws.on("close", function() {
+    ws.on("close", function () {
         console.log('disconnected');
     });
 });
