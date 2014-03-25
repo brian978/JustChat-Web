@@ -20,7 +20,8 @@ var app = null;
 if (cfg.ssl) {
     app = httpServ.createServer({
         key: fs.readFileSync(cfg.ssl_key),
-        cert: fs.readFileSync(cfg.ssl_cert)
+        cert: fs.readFileSync(cfg.ssl_cert),
+        rejectUnauthorized: false
     });
 } else {
     app = httpServ.createServer();
