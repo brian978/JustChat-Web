@@ -5,12 +5,13 @@
  * @copyright Copyright (c) 2014
  * @license Creative Commons Attribution-ShareAlike 3.0
  */
+
 var fs = require('fs');
 var cfg = {
     ssl: true,
     port: 7896,
-    ssl_key: './certs/server.key',
-    ssl_cert: './certs/server.crt'
+    ssl_key: fs.realpathSync(__dirname + '/certs/server.key'),
+    ssl_cert: fs.realpathSync(__dirname + '/certs/server.crt')
 };
 
 var httpServ = ( cfg.ssl ) ? require('https') : require('http');
@@ -28,6 +29,8 @@ if (cfg.ssl) {
 }
 
 app.listen(cfg.port);
+
+console.log("Listening on port " + cfg.port);
 
 var server = new WebSocketServer({server: app});
 
