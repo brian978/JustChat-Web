@@ -8,7 +8,7 @@
 
 var fs = require('fs');
 var cfg = {
-    ssl: true,
+    ssl: false,
     port: 7896,
     ssl_key: fs.realpathSync(__dirname + '/certs/server.key'),
     ssl_cert: fs.realpathSync(__dirname + '/certs/server.crt')
